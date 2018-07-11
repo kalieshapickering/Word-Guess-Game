@@ -1,5 +1,18 @@
+/* background*/
+body{
+    background-image: url(../images/trap-background.jpg);
+}
+
 /* placement of game */
 .game{
+    width: 68%;
     text-align: center;
-    margin-left:20%;
+    background-color: white;
+ 
+}
+.title-image{
+  width: 75%;
+}
+.images{
+    background-color: black;
 }

@@ -1,5 +1,5 @@
 //pop-up window letting user know to press any key to start
-var startGame = alert("Press any key to start");
+//var startAlert = alert("Press any key to start");
 
 //pictures
 
