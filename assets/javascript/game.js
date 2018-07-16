@@ -34,10 +34,15 @@ var getWord = function(wordBank){
 
 //correct character update
 var correctCharacter = [];
+
 // change letters guessed
 var wrongCharacter = [];
-//change guesses remaining
 
+//change guesses remaining
+var maxCount = 12;
+var count = 0;
+var guessesLeft = maxCount - count;
+document.querySelector("#guessesLeft").innerHTML = guessesLeft;
 
 //remove selected word from rotation
 
