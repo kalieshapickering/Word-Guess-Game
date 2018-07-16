@@ -1,38 +1,65 @@
-//pop-up window letting user know to press any key to start
-var startGame = alert("Press any key to start");
+//game score starts at 0
+var score = 0;
 
 // wordbank, word options
 
 var wordBank = ["rich the kid", "travis scott", "xxxtentacion", "young thug", "lil pump"];
 
+//functions of the word guess game render a new question, update score, play music on correct guess, update letters already guess, update reaming guesses
 
-//pick a random artist 
+// render a new question
+ function renderQuestion(){
+     if (workBankIndex <= (wordBank.length -1)){
+         document.querySelector("#randomArtist").innerHTML = randomArtist;
+        // if there is no more options 
+     }else{
+
+     } 
+ }
+
+ //pick a random artist 
 var getWord = function(wordBank){
-return wordBank[Math.floor(Math.random() * wordBank.length)];
-}
-var randomArtist = getWord(wordBank);
-console.log(randomArtist)
+    return wordBank[Math.floor(Math.random() * wordBank.length)];
+    }
+    var randomArtist = getWord(wordBank);
+ // update score
+    function updateScore() {
+        document.querySelector("#wins").innerHTML = wins;
+        document.querySelector("#lose").innerHMTL = loses;
+    }
+ //change photo in jumobtron
+    function artistPhoto(){
+        document.querySelector("#image").innerHTML = ("imageLocation?");
+    }
 
-
-// correct letter guesses
-
+//correct character update
 var correctCharacter = [];
-
-
-// # of guesses remaining
-
-
-//letters already guessed
+// change letters guessed
 var wrongCharacter = [];
-
-// win function
-
-
-//pictures
+//change guesses remaining
 
 
-//audio
+//remove selected word from rotation
 
 
-//lose function
+
+// start of game
+renderQuestion();
+updateScore();
+
+//playing the game
+document.onkeyup = function ( event){
+    var userGuess = event.key.toLowerCase();
+
+    if (userGuess )
+    // game display next question
+randomArtist++;
+renderQuestion();
+
+}
+
+
+
+
+
 

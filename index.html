@@ -27,22 +27,23 @@
                 </div>
             </div>
             <!--jumbotron of photographs-->
-        <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md images ">
-                    
-                            <img src="assets/images/young-thug.jpg" alt="Young Thug">
-             </div>
+            <div class="row">
+                <div class="jumbotron jumbotron-fluid col-md images ">
+                        
+                                <div id="image"><img src="assets/images/young-thug.jpg" alt="Young Thug"></div>
+                 </div>
         </div>
         <!--text for the game-->
         <div class="row">
                 <div class="col-md">
                     <!--title-->
-                    <h2>Title of Artist</h2><br>
-                    <p>_ _ _ _ _ _ _</p>
+                    <h2 id="correctAnswer">Title of Artist</h2><br>
+                    <h5>Wins: <span id="wins"></span> Loses: <span id="loses"></span></h3>
+                    <p id="randomArtist">_ _ _ _ _ _ _</p>
                     <p># of guesses remaining</p>
-                    <p>12</p>
+                    <p id="guessLeft"></p>
                     <p>Letters already Guessed</p>
-                    <p>Q T U</p>
+                    <p id="alreadyGuessed"></p>
                     <br><br>
                 </div>
         </div>
