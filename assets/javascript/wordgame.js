@@ -25,7 +25,7 @@ function updateScore(){
 
     var wordBankIndex = Math.floor(Math.random() * wordBank.length);
     var randomArtist = wordBank[wordBankIndex];
-    var chosenArtist = randomArtist.slice("");
+    var chosenArtist = randomArtist.slice();
     var displayArtist = [];
     for(i=0; i < chosenArtist.length; i++){
        displayArtist.push(chosenArtist[i].replace(chosenArtist[i],"_"));
@@ -35,9 +35,9 @@ function updateScore(){
      console.log("Guess what, the answer is " + chosenArtist + " ;)");
 
      //guesses left
-var maxCount = 12;
+var maxCount = 15;
 var count = 0;
-var guessesleft = maxCount - count;
+var guessesLeft = maxCount - count;
 $("#guessesLeft").html(guessesLeft);
 console.log(guessesLeft);
 
@@ -54,15 +54,15 @@ function renderQuestion(){
 // check to see if you win or lose
 function checkForWinner(){
     if (displayArtist.indexOf("_") === -1){
-        if (count === maxCount){
             //win
             $("#guessOutcome").html("You Win!");
-        }
+        
     }
     if (displayArtist.indexOf("_") !== -1){
+        if (count === maxCount){
         //lose
         $("#guessOutcome").html("You Lose!");
-    }
+    }}
 }
 
 //start of game
@@ -75,11 +75,12 @@ document.onkeyup = function(event) {
                 count++;
                 guessesLeft--;
                 $("#guessesLeft").html(guessesLeft);
-                $("#guessesOutcome").html("Correct!");
+                $("#guessesOutcome").text("Correct!");
                 displayArtist[i] = userGuess;
-                $("#displayArtist").html(displayArtist.join(""));
+                $("#displayArtist").html(displayArtist.join(" "));
                 updateScore(); 
                 checkForWinner();
+                console.log(randomArtist.charAt(i));
         }
     }
     //guess is wrong
@@ -87,9 +88,9 @@ document.onkeyup = function(event) {
         count++;
         guessesLeft --;
         lettersSelectedByUser.push(userGuess);
-        $("#alreadyGuessed").html(lettersSelectedByUser.join());
+        $("#wrongCharacter").html(lettersSelectedByUser.join());
         $("#guessesLeft").html(guessesLeft);
-        $("#guessesOutcome").html("Wrong!");
+        $("#guessesOutcome").text("Wrong!");
         updateScore();
         checkForWinner();
     }
