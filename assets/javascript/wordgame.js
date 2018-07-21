@@ -6,11 +6,11 @@ var lettersSelectedByUser =[];
 
  //word choices
 var wordBank = [
-    "rich the kid",
-    "travis scott", 
+    "richthekid",
+    "travisscott", 
     "xxxtentacion",
-    "young thug", 
-    "lil pump"
+    "youngthug", 
+    "lilpump"
     ];
  
  //once the page fully loads...
@@ -22,7 +22,7 @@ function updateScore(){
     $("#loses").text(loses);
 }
 
-
+// randmonize questions and render one
     var wordBankIndex = Math.floor(Math.random() * wordBank.length);
     var randomArtist = wordBank[wordBankIndex];
     var chosenArtist = randomArtist.slice();
@@ -30,7 +30,7 @@ function updateScore(){
     for(i=0; i < chosenArtist.length; i++){
        displayArtist.push(chosenArtist[i].replace(chosenArtist[i],"_"));
     }
-    document.querySelector("#displayArtist").outerHTML = displayArtist.join(" ");
+    document.querySelector("#displayArtist").innerHTML = displayArtist.join(" ");
     
      console.log("Guess what, the answer is " + chosenArtist + " ;)");
 
@@ -56,6 +56,8 @@ function checkForWinner(){
     if (displayArtist.indexOf("_") === -1){
             //win
             $("#guessOutcome").html("You Win!");
+            //update picture
+            
         
     }
     if (displayArtist.indexOf("_") !== -1){
@@ -68,19 +70,24 @@ function checkForWinner(){
 //start of game
 document.onkeyup = function(event) {
      var userGuess = event.key.toLowerCase();
+
+if (lettersSelectedByUser.indexOf(userGuess)>= 0){
+    return 
+
+}
     if(count !== maxCount){
         for (var i=0; i<randomArtist.length; i++){
             //guess is right
             if(userGuess === randomArtist.charAt(i)){
                 count++;
-                guessesLeft--;
                 $("#guessesLeft").html(guessesLeft);
                 $("#guessesOutcome").text("Correct!");
                 displayArtist[i] = userGuess;
+                console.log(displayArtist[i]);
                 $("#displayArtist").html(displayArtist.join(" "));
                 updateScore(); 
                 checkForWinner();
-                console.log(randomArtist.charAt(i));
+                
         }
     }
     //guess is wrong
@@ -93,6 +100,7 @@ document.onkeyup = function(event) {
         $("#guessesOutcome").text("Wrong!");
         updateScore();
         checkForWinner();
+        console.log(lettersSelectedByUser);
     }
     }
 }
