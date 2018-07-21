@@ -3,6 +3,20 @@ var wins = 0;
 var loses = 0;
 var gamesPlayed = 0;
 var lettersSelectedByUser =[];
+//var richSong = document.createElement("richSong");
+//richSong.setAttribute("src", "assets/images/Plug_Walk.mp3")
+
+//var thugSong = document.createElement("thugSong");
+//thugSong.setAttribute("src","assets/images/young-thug-with-that.mp3" )
+
+//var travisSong = document.createElement("travisSong");
+//travisSong.setAttribute("src","assets/images/travis-scott.mp3" );
+
+//var pumpSong = document.createElement("pumpSong");
+//pumpSong.setAttribute("src","assets/images/lilpump-what-u-say.mp3" );
+
+//var xxxSong = document.createElement("xxxSong");
+//xxxSong.setAttribute("src", "assets/images/young-thug-with-that.mp3");
 
  //word choices
 var wordBank = [
@@ -56,7 +70,30 @@ function checkForWinner(){
     if (displayArtist.indexOf("_") === -1){
             //win
             $("#guessOutcome").html("You Win!");
-            //update picture
+            if(randomArtist === "richthekid"){
+                document.getElementById('richSong').play();
+                $("#image").html("assets/images/rich-the-kid.jpg");
+            }
+            if(randomArtist === "travisscott"){
+                document.getElementById('travisSong').play();
+                document.querySelector("#image").innerHTML =("assets/images/travis-scott.jpg");
+                console.log(randomArtist);
+            }
+            if(randomArtist === "xxxtentacion"){
+                document.getElementById('xxxSong').play();
+                document.querySelector("#image").innerHTML= ("assets/images/xxxtentacion.jpg");
+                console.log(randomArtist);
+            }
+            if(randomArtist === "youngthug"){
+                document.getElementById('thugSong').play();
+                $("#image").html("assets/images/young-thug.jpg");
+                console.log(displayArtist);
+            }
+            if(randomArtist === "lilpump"){
+                document.getElementById('pumpSong').play();
+                $("#image").html("assets/images/lil-pump.jpg");
+                console.log(displayArtist);
+            }
             
         
     }
@@ -69,7 +106,7 @@ function checkForWinner(){
 
 //start of game
 document.onkeyup = function(event) {
-     var userGuess = event.key.toLowerCase();
+     var userGuess = event.key.toLowerCase();
 
 if (lettersSelectedByUser.indexOf(userGuess)>= 0){
     return 
@@ -111,4 +148,3 @@ if (lettersSelectedByUser.indexOf(userGuess)>= 0){
 
 //closing tag of game
  });
-
