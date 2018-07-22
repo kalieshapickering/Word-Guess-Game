@@ -16,6 +16,7 @@ var wordBank = [
 //once the page fully loads...
 window.onload = (function () {
 
+    alert("Press any key to play!");
     //update score 
     function updateScore() {
         $("#wins").text(wins);
