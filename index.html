@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,80 @@
     <title>Word Guess Game</title>
 
     <!-- link to bootstrap css-->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
     <!--internal css-->
     <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- internal javaScript -->
     <script src="assets/javascript/wordgame.js"></script>
-   
+
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
- 
+
 
 </head>
-<body>
-    
-    <!-- start of container-->
-<div class="container game ">
-    <!--title of the game-->
-<div class= 'audio'>
-    <audio id="pumpSong" src="assets/images/lilpump-what-u-say.mp3"></audio>
-    <audio id="thugSong" src="assets/images/young-thug-with-that.mp3"></audio>
-    <audio id="xxxSong" src="assets/images/xxxtentacion-jocelyn-flores.mp3"></audio>
-    <audio id="travisSong" src="assets/images/travis-scott-amen.mp3"></audio>
-    <audio id="richSong" src="assets/images/Plug_Walk.mp3"></audio>
-</div>
-  <div class="container">
 
-        <div class="row">
+<body>
+
+    <!-- start of container-->
+    <div class="container game ">
+        <!--title of the game-->
+        <div class='audio'>
+            <audio id="pumpSong" src="assets/images/lilpump-what-u-say.mp3"></audio>
+            <audio id="thugSong" src="assets/images/young-thug-with-that.mp3"></audio>
+            <audio id="xxxSong" src="assets/images/xxxtentacion-jocelyn-flores.mp3"></audio>
+            <audio id="travisSong" src="assets/images/travis-scott-amen.mp3"></audio>
+            <audio id="richSong" src="assets/images/Plug_Walk.mp3"></audio>
+        </div>
+        <div class="container">
+
+            <div class="row">
                 <div class="col-md">
                     <!--word guess title image-->
-                    <img src="assets/images/word-guess-title.png" class="title-image"  alt="Word Guess Game Trap Season">
+                    <img src="assets/images/word-guess-title.png" class="title-image" alt="Word Guess Game Trap Season">
                 </div>
             </div>
             <!--jumbotron of photographs-->
             <div class="row">
                 <div class="jumbotron jumbotron-fluid col-md images " id="image">
-                        
-                
-                 </div>
-        </div>
-        <!--text for the game-->
-        <div class="row">
+
+
+                </div>
+            </div>
+            <!--text for the game-->
+            <div class="row">
                 <div class="col-md">
                     <!--title-->
-                    <h2>Title of Artist : <span id="correctAnswer"></span></h2><br>
-                    <h5>Wins: <span id="wins"></span> Loses: <span id="loses"></h3>
-                    <p id="displayArtist"></p>
-                    <p id="guessOutcome"></p>
-                    <p># of Guesses Remaining</p>
-                    <p id="guessesLeft"></p>
-                    <p>Letters Already Guessed</p>
-                    <p id="wrongCharacter"></p>
-                    <button onclick="playAgain()">Play again?</button>
-                    <br><br>
+                    <h2>Title of Artist :
+                        <span id="correctAnswer"></span>
+                    </h2>
+                    <br>
+                    <h5>Wins:
+                        <span id="wins"></span> Loses:
+                        <span id="loses">
+                            </h3>
+                            <p id="displayArtist"></p>
+                            <p id="guessOutcome"></p>
+                            <p># of Guesses Remaining</p>
+                            <p id="guessesLeft"></p>
+                            <p>Letters Already Guessed</p>
+                            <p id="wrongCharacter"></p>
+                            <button onclick="playAgain()">Play again?</button>
+                            <br>
+                            <br>
                 </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
-    
-<br><br><br><br>
-  </div>
-<!--end of game-->
-</div>
-<!--end of container-->
-  
+        <!--end of game-->
+    </div>
+    <!--end of container-->
+
 </body>
+
 </html>

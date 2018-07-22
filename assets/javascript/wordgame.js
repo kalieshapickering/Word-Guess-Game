@@ -15,12 +15,12 @@ var wordBank = [
 //once the page fully loads...
 window.onload = (function () {
 
-    alert("Press any key to play!");
+    
     //update score 
     function updateScore() {
         $("#wins").text(wins);
         $("#loses").text(loses);
-        $("#gamesPlayed").text(gamesPlayed);
+       
     }
 
     // randmonize questions and render one
@@ -103,7 +103,7 @@ window.onload = (function () {
         updateScore();
     }
 
-  
+
 
     //start of game
     document.onkeyup = function (event) {
@@ -146,8 +146,8 @@ window.onload = (function () {
     // game display next question
     chosenArtist++;
     renderQuestion();
-    
-    
+
+
 
     //closing tag of game
 });
@@ -155,4 +155,3 @@ window.onload = (function () {
 function playAgain() {
     location.reload();
 };
-
