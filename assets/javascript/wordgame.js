@@ -1,7 +1,6 @@
 //variables
 var wins = 0;
 var loses = 0;
-var gamesPlayed = 0;
 var lettersSelectedByUser = [];
 
 //word choices
@@ -147,7 +146,7 @@ window.onload = (function () {
     // game display next question
     chosenArtist++;
     renderQuestion();
-    gamesPlayed++;
+    
     
 
     //closing tag of game
