@@ -81,7 +81,7 @@ window.onload = (function () {
             }
             if (randomArtist === "youngthug") {
                 document.getElementById('thugSong').play();
-                document.querySelector("#image").innerHTML = ("<img src='assets/images/young-thug.jpg class='thug'>");
+                document.querySelector("#image").innerHTML = ("<img src='assets/images/young-thug.jpg' class='thug'>");
                 $('#correctAnswer').html(displayArtist);
                 wins++;
             }
