@@ -1,14 +1,14 @@
-# JavaScript word guess game
+# JavaScript Word Guess Game
 
-### OverView
+### Overview
 
 I have created a HTML/CSS Word Guess Browser Game that uses JavaScript to compose the logic and jQuery for DOM manipulation.
 
-### Before you begin
+### Before You Begin
 
 * Please note that I was unable to get the page to insert a new question after the original question was anwered. I have added a reload button in the interm till I can get that feature up and running! (Stay tune! :boom: )
 
-### About the Game
+### About The Game
 
 I have created a `'Trap'` style word guess game, what does `'trap'` mean? Trap is a style of music that distinguishes it self by its sound by using `'hi-hats'`. With this game, once you guess the correct letters of the selected Trap Music Artist one of`my favourite`songs from the artist will begin to play, so sit back and enjoy the music! :smile:
 
