@@ -2,149 +2,157 @@
 var wins = 0;
 var loses = 0;
 var gamesPlayed = 0;
-var lettersSelectedByUser =[];
-//var richSong = document.createElement("richSong");
-//richSong.setAttribute("src", "assets/images/Plug_Walk.mp3")
+var lettersSelectedByUser = [];
 
-//var thugSong = document.createElement("thugSong");
-//thugSong.setAttribute("src","assets/images/young-thug-with-that.mp3" )
-
-//var travisSong = document.createElement("travisSong");
-//travisSong.setAttribute("src","assets/images/travis-scott.mp3" );
-
-//var pumpSong = document.createElement("pumpSong");
-//pumpSong.setAttribute("src","assets/images/lilpump-what-u-say.mp3" );
-
-//var xxxSong = document.createElement("xxxSong");
-//xxxSong.setAttribute("src", "assets/images/young-thug-with-that.mp3");
-
- //word choices
+//word choices
 var wordBank = [
     "richthekid",
-    "travisscott", 
+    "travisscott",
     "xxxtentacion",
-    "youngthug", 
+    "youngthug",
     "lilpump"
-    ];
- 
- //once the page fully loads...
-window.onload=(function() {
+];
 
-//update score 
-function updateScore(){
-    $("#wins").text(wins);
-    $("#loses").text(loses);
-}
+//once the page fully loads...
+window.onload = (function () {
 
-// randmonize questions and render one
+    //update score 
+    function updateScore() {
+        $("#wins").text(wins);
+        $("#loses").text(loses);
+        $("#gamesPlayed").text(gamesPlayed);
+    }
+
+    // randmonize questions and render one
     var wordBankIndex = Math.floor(Math.random() * wordBank.length);
     var randomArtist = wordBank[wordBankIndex];
     var chosenArtist = randomArtist.slice();
     var displayArtist = [];
-    for(i=0; i < chosenArtist.length; i++){
-       displayArtist.push(chosenArtist[i].replace(chosenArtist[i],"_"));
+    for (i = 0; i < chosenArtist.length; i++) {
+        displayArtist.push(chosenArtist[i].replace(chosenArtist[i], "_"));
     }
     document.querySelector("#displayArtist").innerHTML = displayArtist.join(" ");
-    
-     console.log("Guess what, the answer is " + chosenArtist + " ;)");
 
-     //guesses left
-var maxCount = 15;
-var count = 0;
-var guessesLeft = maxCount - count;
-$("#guessesLeft").html(guessesLeft);
-console.log(guessesLeft);
+    console.log("Guess what, the answer is " + chosenArtist + " ;)");
 
-// next question
-function renderQuestion(){
-  if( wordBank <=(wordBank.length -1)){
-      $("#displayArtrist").hmtl(chosenArtist);
-  }else{
-    checkForWinner();
-  }
+    //guesses left
+    var maxCount = 16;
+    var count = 0;
+    var guessesLeft = maxCount - count;
+    $("#guessesLeft").html(guessesLeft);
+    console.log(guessesLeft);
 
-}
+    // next question
+    function renderQuestion() {
+        if (wordBank <= (wordBank.length - 1)) {
+            $("#correctAnswer").hmtl(randomArtist);
+            displayArtist();
 
-// check to see if you win or lose
-function checkForWinner(){
-    if (displayArtist.indexOf("_") === -1){
+        } else {
+            checkForWinner();
+        }
+
+    }
+
+    // check to see if you win or lose
+    function checkForWinner() {
+        if (displayArtist.indexOf("_") === -1) {
             //win
             $("#guessOutcome").html("You Win!");
-            if(randomArtist === "richthekid"){
+            if (randomArtist === "richthekid") {
                 document.getElementById('richSong').play();
-                $("#image").html("assets/images/rich-the-kid.jpg");
+                $("#image").html("<img src='assets/images/rich-the-kid.jpg'class='rich'>");
+                $('#correctAnswer').html(randomArtist);
+                wins++;
+
             }
-            if(randomArtist === "travisscott"){
+            if (randomArtist === "travisscott") {
                 document.getElementById('travisSong').play();
-                document.querySelector("#image").innerHTML =("assets/images/travis-scott.jpg");
-                console.log(randomArtist);
+                document.querySelector("#image").innerHTML = ("<img src='assets/images/travis-scott.jpg' class='travis'>");
+                $('#correctAnswer').html(randomArtist);
+                wins++
             }
-            if(randomArtist === "xxxtentacion"){
+            if (randomArtist === "xxxtentacion") {
                 document.getElementById('xxxSong').play();
-                document.querySelector("#image").innerHTML= ("assets/images/xxxtentacion.jpg");
-                console.log(randomArtist);
+                document.querySelector("#image").innerHTML = ("<img src='assets/images/xxxtentacion.jpg'class='xxx'>");
+                $('#correctAnswer').html(randomArtist);
+                wins++;
             }
-            if(randomArtist === "youngthug"){
+            if (randomArtist === "youngthug") {
                 document.getElementById('thugSong').play();
-                $("#image").html("assets/images/young-thug.jpg");
-                console.log(displayArtist);
+                document.querySelector("#image").innerHTML = ("<img src='assets/images/young-thug.jpg class='thug'>");
+                $('#correctAnswer').html(displayArtist);
+                wins++;
             }
-            if(randomArtist === "lilpump"){
+            if (randomArtist === "lilpump") {
                 document.getElementById('pumpSong').play();
-                $("#image").html("assets/images/lil-pump.jpg");
-                console.log(displayArtist);
+                $("#image").hmtl("<img src='assets/images/lil-pump.jpg' class='pump'>");
+                $('#correctAnswer').html(displayArtist);
+                wins++;
             }
-            
-        
+
+
+        }
+        if (displayArtist.indexOf("_") !== -1) {
+            if (count === maxCount) {
+                //lose
+                $("#guessOutcome").html("You Lose!");
+                loses++;
+            }
+        }
+        updateScore();
     }
-    if (displayArtist.indexOf("_") !== -1){
-        if (count === maxCount){
-        //lose
-        $("#guessOutcome").html("You Lose!");
-    }}
-}
 
-//start of game
-document.onkeyup = function(event) {
-     var userGuess = event.key.toLowerCase();
+  
 
-if (lettersSelectedByUser.indexOf(userGuess)>= 0){
-    return 
+    //start of game
+    document.onkeyup = function (event) {
+        var userGuess = event.key.toLowerCase();
 
-}
-    if(count !== maxCount){
-        for (var i=0; i<randomArtist.length; i++){
-            //guess is right
-            if(userGuess === randomArtist.charAt(i)){
+        if (lettersSelectedByUser.indexOf(userGuess) >= 0) {
+            return
+
+        }
+        if (count !== maxCount) {
+            for (var i = 0; i < randomArtist.length; i++) {
+                //guess is right
+                if (userGuess === randomArtist.charAt(i)) {
+                    count++;
+                    guessesLeft--;
+                    $("#guessesLeft").html(guessesLeft);
+                    $("#guessesOutcome").text("Correct!");
+                    displayArtist[i] = userGuess;
+                    console.log(displayArtist[i]);
+                    $("#displayArtist").html(displayArtist.join(" "));
+                    updateScore();
+                    checkForWinner();
+
+                }
+            }
+            //guess is wrong
+            if (randomArtist.indexOf(userGuess) === -1) {
                 count++;
+                guessesLeft--;
+                lettersSelectedByUser.push(userGuess);
+                $("#wrongCharacter").html(lettersSelectedByUser.join());
                 $("#guessesLeft").html(guessesLeft);
-                $("#guessesOutcome").text("Correct!");
-                displayArtist[i] = userGuess;
-                console.log(displayArtist[i]);
-                $("#displayArtist").html(displayArtist.join(" "));
-                updateScore(); 
+                $("#guessesOutcome").text("Wrong!");
+                updateScore();
                 checkForWinner();
-                
+                console.log(lettersSelectedByUser);
+            }
         }
     }
-    //guess is wrong
-    if (randomArtist.indexOf(userGuess) === -1){
-        count++;
-        guessesLeft --;
-        lettersSelectedByUser.push(userGuess);
-        $("#wrongCharacter").html(lettersSelectedByUser.join());
-        $("#guessesLeft").html(guessesLeft);
-        $("#guessesOutcome").text("Wrong!");
-        updateScore();
-        checkForWinner();
-        console.log(lettersSelectedByUser);
-    }
-    }
-}
- // game display next question
- chosenArtist++;
- renderQuestion();
- gamesPlayed++;
+    // game display next question
+    chosenArtist++;
+    renderQuestion();
+    gamesPlayed++;
+    
 
-//closing tag of game
- });
+    //closing tag of game
+});
+
+function playAgain() {
+    location.reload();
+};
+

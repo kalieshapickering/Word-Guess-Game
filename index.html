@@ -20,6 +20,7 @@
 
 </head>
 <body>
+    
     <!-- start of container-->
 <div class="container game ">
     <!--title of the game-->
@@ -40,28 +41,29 @@
             </div>
             <!--jumbotron of photographs-->
             <div class="row">
-                <div class="jumbotron jumbotron-fluid col-md images ">
+                <div class="jumbotron jumbotron-fluid col-md images " id="image">
                         
-                                <div id="image"><img src="assets/images/young-thug.jpg" class= "thug" alt="Young Thug"></div>
+                
                  </div>
         </div>
         <!--text for the game-->
         <div class="row">
                 <div class="col-md">
                     <!--title-->
-                    <h2>Title of Artist<span id="correctAnswer"></span></h2><br>
-                    <h5>Wins: <span id="wins"></span> Loses: <span id="loses"></span></h3>
+                    <h2>Title of Artist : <span id="correctAnswer"></span></h2><br>
+                    <h5>Wins: <span id="wins"></span> Loses: <span id="loses"> Games Played: <span id="gamesPlayed"></span></h3>
                     <p id="displayArtist"></p>
                     <p id="guessOutcome"></p>
                     <p># of Guesses Remaining</p>
                     <p id="guessesLeft"></p>
                     <p>Letters Already Guessed</p>
                     <p id="wrongCharacter"></p>
+                    <button onclick="playAgain()">Play again?</button>
                     <br><br>
                 </div>
         </div>
     
-
+<br><br><br><br>
   </div>
 <!--end of game-->
 </div>
