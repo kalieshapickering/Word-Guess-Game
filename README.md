@@ -10,7 +10,7 @@ I have created a HTML/CSS Word Guess Browser Game that uses JavaScript to compos
 
 ### About The Game
 
-I have created a `'Trap'` style word guess game, what does `'trap'` mean? Trap is a style of music that distinguishes it self by its sound by using `'hi-hats'`. With this game, once you guess the correct letters of the selected Trap Music Artist one of`my favourite`songs from the artist will begin to play, so sit back and enjoy the music! :smile:
+I have created a trap style word guess game, what does `'trap'` mean? Trap is a style of music that distinguishes it self by its sound by using `'hi-hats'`. With this game, once you guess the correct letters of the selected Trap Music Artist one of `my favourite` songs from the artist will begin to play, so sit back and enjoy the music! :smile:
 
 ### Game Instructions
 

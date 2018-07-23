@@ -61,32 +61,32 @@ window.onload = (function () {
             $("#guessOutcome").html("You Win!");
             if (randomArtist === "richthekid") {
                 document.getElementById('richSong').play();
-                $("#image").html("<img src='assets/images/rich-the-kid.jpg'class='rich'>");
+                $("#image").html("<img src='assets/images/rich-the-kid.jpg'class='rich' alt='Rich the Kid'>");
                 $('#correctAnswer').html(randomArtist);
                 wins++;
 
             }
             if (randomArtist === "travisscott") {
                 document.getElementById('travisSong').play();
-                document.querySelector("#image").innerHTML = ("<img src='assets/images/travis-scott.jpg' class='travis'>");
+                document.querySelector("#image").innerHTML = ("<img src='assets/images/travis-scott.jpg' class='travis' alt'Travis Scott'>");
                 $('#correctAnswer').html(randomArtist);
                 wins++
             }
             if (randomArtist === "xxxtentacion") {
                 document.getElementById('xxxSong').play();
-                document.querySelector("#image").innerHTML = ("<img src='assets/images/xxxtentacion.jpg'class='xxx'>");
+                document.querySelector("#image").innerHTML = ("<img src='assets/images/xxxtentacion.jpg'class='xxx' alt='xxxtentacion'>");
                 $('#correctAnswer').html(randomArtist);
                 wins++;
             }
             if (randomArtist === "youngthug") {
                 document.getElementById('thugSong').play();
-                document.querySelector("#image").innerHTML = ("<img src='assets/images/young-thug.jpg' class='thug'>");
+                document.querySelector("#image").innerHTML = ("<img src='assets/images/young-thug.jpg' class='thug' alt='Young Thug'>");
                 $('#correctAnswer').html(displayArtist);
                 wins++;
             }
             if (randomArtist === "lilpump") {
                 document.getElementById('pumpSong').play();
-                $("#image").hmtl("<img src='assets/images/lil-pump.jpg' class='pump'>");
+                $("#image").html("<img src='assets/images/lil-pump.jpg' class='pump' alt='Lil Pump'>");
                 $('#correctAnswer').html(displayArtist);
                 wins++;
             }
@@ -146,7 +146,8 @@ window.onload = (function () {
     // game display next question
     chosenArtist++;
     renderQuestion();
-
+    updateScore();
+    
 
 
     //closing tag of game
