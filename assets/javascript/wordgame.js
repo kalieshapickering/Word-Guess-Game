@@ -45,6 +45,7 @@ window.onload = (function () {
     // next question
     function renderQuestion() {
         if (wordBank <= (wordBank.length - 1)) {
+
             $("#correctAnswer").hmtl(randomArtist);
             displayArtist();
 
@@ -118,7 +119,7 @@ window.onload = (function () {
                 //guess is right
                 if (userGuess === randomArtist.charAt(i)) {
                     count++;
-                    guessesLeft--;
+                    guessesLeft++;
                     $("#guessesLeft").html(guessesLeft);
                     $("#guessesOutcome").text("Correct!");
                     displayArtist[i] = userGuess;
@@ -140,6 +141,7 @@ window.onload = (function () {
                 updateScore();
                 checkForWinner();
                 console.log(lettersSelectedByUser);
+                
             }
         }
     }
